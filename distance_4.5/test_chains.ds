@@ -260,14 +260,6 @@ HEADER: protein chains
 ../test/1HJB.pdb.gz D
 ../test/1HJB.pdb.gz E
 ../test/1HJB.pdb.gz F
-../test/1RZR.pdb.gz G
-../test/1RZR.pdb.gz C
-../test/1RZR.pdb.gz A
-../test/1RZR.pdb.gz D
-../test/1RZR.pdb.gz T
-../test/1RZR.pdb.gz L
-../test/1RZR.pdb.gz Y
-../test/1RZR.pdb.gz S
 ../test/2FO1.pdb.gz A
 ../test/2FO1.pdb.gz D
 ../test/2FO1.pdb.gz E
