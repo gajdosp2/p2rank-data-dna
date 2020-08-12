@@ -1,0 +1,104 @@
+PROCESSING [/home/rkrivak/p2rank-data-dna/conservation/fasta_all/6A57A.pdb.gz.seq.fasta]
+LOG: /home/rkrivak/p2rank-data-dna/conservation/e5i1/log/6A57A.pdb.gz.seq.fasta.log
++ source local-setenv.sh
+++ PSIBLAST_DIR=/home/rkrivak/conservation/conservation-workbench/ncbi-blast/bin
+++ CDHIT_DIR=/home/rkrivak/conservation/conservation-workbench/cd-hit
+++ MUSCLE_DIR=/home/rkrivak/conservation/conservation-workbench
+++ JSD_DIR=/home/rkrivak/conservation/conservation-workbench/conservation_code
+++ PYTHON_CMD=python
+++ BLASTDB_DIR=/mnt/ramdisk/blastdb
+++ PSIBLAST_THREADS=4
+++ export PATH=/home/rkrivak/conservation/conservation-workbench/ncbi-blast/bin:/home/rkrivak/conservation/conservation-workbench/cd-hit:/home/rkrivak/conservation/conservation-workbench:/home/rkrivak/bin:/home/rkrivak/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+++ PATH=/home/rkrivak/conservation/conservation-workbench/ncbi-blast/bin:/home/rkrivak/conservation/conservation-workbench/cd-hit:/home/rkrivak/conservation/conservation-workbench:/home/rkrivak/bin:/home/rkrivak/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin
+++ export JSD_DIR=/home/rkrivak/conservation/conservation-workbench/conservation_code
+++ JSD_DIR=/home/rkrivak/conservation/conservation-workbench/conservation_code
+++ export BLASTDB=/mnt/ramdisk/blastdb
+++ BLASTDB=/mnt/ramdisk/blastdb
+++ export PYTHON_CMD=python
+++ PYTHON_CMD=python
+++ export PSIBLAST_THREADS=4
+++ PSIBLAST_THREADS=4
++ file=/home/rkrivak/p2rank-data-dna/conservation/fasta_all/6A57A.pdb.gz.seq.fasta
++ outdir=/home/rkrivak/p2rank-data-dna/conservation/e5i1
++ psiblast_evalue=0.00001
++ psiblast_iterations=1
++ mkdir -p /home/rkrivak/p2rank-data-dna/conservation/e5i1/alignments
++ mkdir -p /home/rkrivak/p2rank-data-dna/conservation/e5i1/scores
+++ basename /home/rkrivak/p2rank-data-dna/conservation/fasta_all/6A57A.pdb.gz.seq.fasta
++ file_base=6A57A.pdb.gz.seq.fasta
++ alignments_file=/home/rkrivak/p2rank-data-dna/conservation/e5i1/alignments/6A57A.pdb.gz.seq.fasta.ali
++ scores_file=/home/rkrivak/p2rank-data-dna/conservation/e5i1/scores/6A57A.pdb.gz.seq.fasta.hom.gz
+++ tempfile
++ blastResFile=/tmp/fileojB251
+++ tempfile
++ blastSeq=/tmp/filezFY5q5
+++ tempfile
++ modifiedInputFile=/tmp/fileOrMPi3
+++ tempfile
++ muscleResultFile=/tmp/fileVMhHq7
+++ tempfile
++ conservationExtractorInput=/tmp/file83xDv9
++ MUSCLE_OPTS='-quiet -maxiters 4 -diags -sv -distance1 kbit20_3'
++ search swissprot
++ db=swissprot
++ tee /home/rkrivak/p2rank-data-dna/conservation/e5i1/alignments/6A57A.pdb.gz.seq.fasta.ali
++ psiblast -db swissprot -outfmt '6 sallseqid qcovs pident' -evalue 0.00001 -num_threads 4 -num_iterations 1
++ ./filter.awk
++ blastdbcmd -db swissprot -entry_batch /tmp/fileojB251
++ cd-hit -i /tmp/filezFY5q5 -o /tmp/fileojB251
+================================================================
+Program: CD-HIT, V4.7 (+OpenMP), Mar 23 2018, 15:56:04
+Command: cd-hit -i /tmp/filezFY5q5 -o /tmp/fileojB251
+
+Started: Wed Aug 12 00:43:11 2020
+================================================================
+                            Output                              
+----------------------------------------------------------------
+total seq: 1764
+longest and shortest : 1586 and 203
+Total letters: 1156518
+Sequences have been sorted
+
+Approximated minimal memory consumption:
+Sequence        : 1M
+Buffer          : 1 X 10M = 10M
+Table           : 1 X 65M = 65M
+Miscellaneous   : 0M
+Total           : 77M
+
+Table limit with the given memory limit:
+Max number of representatives: 949774
+Max number of word counting entries: 90298186
+
+comparing sequences from          0  to       1764
+.
+     1764  finished        317  clusters
+
+Apprixmated maximum memory consumption: 78M
+writing new database
+writing clustering information
+program completed !
+
+Total CPU time 0.72
+++ wc -l
+++ grep '^>'
++ numSeq=317
++ echo Found 317 sequences in swissprot
+Found 317 sequences in swissprot
+++ wc -l
+++ grep '^>'
++ numSeq=317
++ '[' 1 = 0 ']'
++ sed 's/^>/>query_sekvence|/'
++ muscle -quiet -maxiters 4 -diags -sv -distance1 kbit20_3
++ cat /tmp/fileojB251 /tmp/fileOrMPi3
++ awk -f sortMuscleOutput.awk
++ cd /home/rkrivak/conservation/conservation-workbench/conservation_code
++ python /home/rkrivak/conservation/conservation-workbench/conservation_code/score_conservation.py /tmp/file83xDv9
++ gzip -9
++ rm /tmp/fileVMhHq7
++ rm /tmp/fileOrMPi3
++ rm /tmp/filezFY5q5
++ rm /tmp/fileojB251
+TIME: 34 min 37 s
+DONE
