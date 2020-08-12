@@ -275,8 +275,6 @@ HEADER: protein chains
 ../train/5W9S.pdb.gz C
 ../train/1MJE.pdb.gz B
 ../train/1MJE.pdb.gz A
-../train/6HMS.pdb.gz A
-../train/6HMS.pdb.gz B
 ../train/4UMM.pdb.gz A
 ../train/4UMM.pdb.gz E
 ../train/4UMM.pdb.gz F
@@ -287,7 +285,6 @@ HEADER: protein chains
 ../train/4KFC.pdb.gz B
 ../train/6JGW.pdb.gz B
 ../train/6JGW.pdb.gz A
-../train/2I5S.pdb.gz X
 ../train/2OAA.pdb.gz A
 ../train/2OAA.pdb.gz B
 ../train/5MHJ.pdb.gz A
